@@ -21,7 +21,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>"};
+static const char *tags[] = { "Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ", "Ⅶ"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -61,9 +61,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *mutevol[] = { "/usr/bin/pactl" , "set-sink-mute" , "1" , "toggle" , NULL };
-static const char *upvol[] = { "/usr/bin/pactl" , "set-sink-volume", "1" , "-5%",      NULL };
-static const char *downvol[] = { "/usr/bin/pactl" , "set-sink-volume", "1" , "+5%",    NULL };
+static const char *mutevol[] = { "/usr/bin/pactl" , "set-sink-mute" , "@DEFAULT_SINK@" , "toggle" , NULL };
+static const char *upvol[] = { "/usr/bin/pactl" , "set-sink-volume", "@DEFAULT_SINK@" , "-5%",      NULL };
+static const char *downvol[] = { "/usr/bin/pactl" , "set-sink-volume", "@DEFAULT_SINK@" , "+5%",    NULL };
 /*  static const char *printflame[] = { "/usr/bin/flameshot" , "gui" ,                     NULL }; */
 static const char *printflame[] = { "/home/amir/Downloads/screenshot.sh",               NULL};
 static Key keys[] = {
